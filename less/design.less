@@ -1,0 +1,153 @@
+/* ==========================
+   DESIGN SECTION (portfolio)
+========================== */
+
+/* Cards DE ARRIBA */
+
+
+.design {
+  padding: 3rem 0;
+
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ==== TÍTULO DE LA SECCIÓN ==== */
+  .title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: @text-secondary; // negro
+      letter-spacing: .03em;
+
+      padding: 8px;
+      border-radius: 10px;
+      background-color: var(--color-h2);
+      display: inline;
+    }
+
+    p {
+      opacity: .8;
+      font-size: 0.95rem;
+      color: @text-secondary; // negro
+    }
+  }
+
+  /* ==== GRID ==== */
+  .design-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+  }
+
+  /* ==== CARD ==== */
+  .design-item {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); // más suave sobre tu fondo
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: transform .25s ease, box-shadow .25s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+
+      .design-img img {
+
+        transform: scale(1.06);
+        
+      }
+    }
+  }
+
+  /* ==== IMAGEN ==== */
+  .design-img {
+    
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    /* degradado sutil en la parte baja */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0));
+      pointer-events: none;
+    }
+
+    /* primer span: icono + likes */
+    span:first-of-type {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+
+      i {
+        margin-right: 4px;
+      }
+    }
+
+    /* segundo span: categoría */
+    span:last-of-type {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      color: @text-secondary;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+
+  /* ==== TEXTO DE LA CARD ==== */
+  .design-title {
+    padding: 1.1rem 1.3rem 1.4rem;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: @text-secondary; // título de la card en negro
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.35;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  /* ==== RESPONSIVE ==== */
+  @media (max-width: 768px) {
+    .design-content {
+      grid-template-columns: 1fr;
+    }
+  }
+}

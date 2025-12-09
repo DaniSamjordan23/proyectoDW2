@@ -1,0 +1,141 @@
+/* Título tipo pastilla reutilizable */
+.titulo-seccion {
+  display: inline-block;
+  background-color: var(--color-h2);
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Página de contacto */
+.contact-page {
+  width: 100%;
+  padding: 30px 20px;
+}
+
+/* Bloque principal: formulario + mapa */
+.contact-main {
+  display: flex;
+  flex-direction: column;   // móvil primero
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  .contact-main__column {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Formulario dentro de su columna */
+  .contact-main__form {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+
+      label {
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      input[type="range"] {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="button"] {
+        margin-top: 10px;
+        align-self: flex-start;
+        padding: 10px 18px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        background: #ff4d4d;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.2s ease;
+
+        &:hover {
+          background: darken(#ff4d4d, 8%);
+        }
+      }
+    }
+  }
+
+  /* Columna del mapa */
+  .contact-main__map {
+    iframe {
+      width: 100%;
+      min-height: 320px;
+      border: none;
+      border-radius: 10px;
+    }
+  }
+
+  /* Versión de escritorio: columnas lado a lado */
+  @media (min-width: 900px) {
+    flex-direction: row;
+
+    .contact-main__column {
+      flex: 1;     // cada columna ocupa la mitad
+    }
+  }
+}
+
+/* Bloque del video */
+/* Título reutilizable */
+.titulo-seccion {
+  display: inline-block;
+  background-color: var(--color-h2);
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* Sección del video */
+.video-ubicacion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+
+  .video-card {
+    background: fade(white, 95%);   // un beige suave que combine con tu fondo
+    border-radius: 14px;
+    padding: 25px 20px;
+    max-width: 900px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    .direccion {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    video {
+      width: 100%;
+      max-height: 500px;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    }
+  }
+}
